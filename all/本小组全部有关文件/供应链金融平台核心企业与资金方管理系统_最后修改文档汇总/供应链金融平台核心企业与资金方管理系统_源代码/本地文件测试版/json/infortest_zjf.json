@@ -1,0 +1,15 @@
+{
+  "msg": "Success",
+  "status": 1,
+  "user":
+  {
+    "email": "test@163.com",
+    "name": "某知名资金方",
+    "profile":{
+	  "money": 1000,
+      "new_adopt": 3,
+      "money_adopt": 2
+    },
+    "role": "MoneyGiver"
+  }
+}

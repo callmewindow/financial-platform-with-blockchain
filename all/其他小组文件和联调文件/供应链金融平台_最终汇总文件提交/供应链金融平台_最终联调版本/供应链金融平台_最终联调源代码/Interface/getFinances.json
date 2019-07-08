@@ -1,0 +1,22 @@
+{
+  "msg": "Success",
+  "data": [
+    {
+      "createTime": "2019-06-04 14:15:26",
+      "aname": "awsl Co. Ltd,",
+      "cname": "114514 special offer",
+      "originalValue": 114514,
+      "fValue": 12450,
+      "returns": 98000
+    },
+    {
+      "createTime": "2019-06-04 14:15:26",
+      "aname": "awsl Co. Ltd,",
+      "cname": "114514 special offer",
+      "originalValue": 114514,
+      "fValue": 12450,
+      "returns": 95000
+    }
+  ],
+  "status": 1
+}

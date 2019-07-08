@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" type="text/javascript" rel="stylesheet">
+    <link href="css/bootsnav.css" type="text/css" rel="stylesheet">
+    <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/steps.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootsnav.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/login.js" type="text/javascript"></script>
+
+    <script>
+        function register() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var email = document.getElementById('mail').value;
+            var phone = document.getElementById('phone').value;
+            var name = document.getElementById('name').value;
+            var companyname = document.getElementById('cname').value;
+            var identity = document.getElementById('choose').innerHTML;
+            var json =
+                {
+                    'person': name,
+                    'num':phone,
+                    'type':email,
+                    'trust_money':0.5,
+                    'trust':"北航高利贷"
+
+                };
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: 'http://114.115.240.16/api/user/register',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    'email': username,
+                    'name': companyname,
+                    'password': password,
+                    'role': {"核心企业": 'CoreBusiness', "供应商": "Supplier", "金融机构": "MoneyGiver"}[identity],
+                    'additional': json
+                }),
+                success: function (result) {
+                    if (result['status'] === 1) {
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            url: 'http://114.115.240.16/api/user/login',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                'email': username,
+                                'password': password
+                            }),
+                            success: function (result) {
+                                if (result['status'] === 1) {
+                                    Cookies.set("token", result.data);
+                                    localStorage.setItem('token', result.data);
+                                    Cookies.set("email", username);
+                                    localStorage.setItem('email', username);
+                                    if (identity === '供应商') {
+                                        Cookies.set("role", 'Supplier');
+                                        localStorage.setItem('role', 'Supplier');
+                                        window.location.href = './pages/企业信息/查看信息.html';
+                                    } else if (identity === '核心企业') {
+                                        Cookies.set("role", 'CoreBusiness');
+                                        localStorage.setItem('role', 'CoreBusiness');
+                                        window.location.href = "./pages/核心企业首页/hxqysy.html"
+                                    } else if (identity === '金融机构') {
+                                        Cookies.set("role", 'MoneyGiver');
+                                        localStorage.setItem('role', 'MoneyGiver');
+                                        window.location.href = "./pages/资金方首页/zjfsy.html"
+
+                                    }
+                                } else {
+                                    alert('注册成功，请刷新页面登录' + result['msg']);
+                                }
+                            }
+                        })
+                    } else {
+                        location.reload();
+                        alert('注册失败，' + result['msg']);
+                    }
+                }
+            }).done(function () {
+                window.step.nextStep();
+            })
+        }
+
+        function chooseIdentity(name) {
+            document.getElementById('choose').innerHTML = name;
+            $("#choose-contents").hide();
+        }
+    </script>
+
+    <style>
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 下拉内容 (默认隐藏) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 370px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 下拉菜单的链接 */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* 鼠标移上去后修改下拉菜单链接颜色 */
+        .dropdown-content a:hover {
+            background-color: grey
+        }
+
+        /* 在鼠标移上去后显示下拉菜单 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
+        .dropdown:hover .dropbtn {
+            background-color: grey;
+        }
+    </style>
+    <title>注册</title>
+	<link rel="icon" href="images/buaa.png" >
+</head>
+
+<body class="logobg_style">
+<div id="large-header" class="large-header login-page">
+    <canvas id="demo-canvas" width="1590" height="721"></canvas>
+    <div class="Retrieve_style">
+        <div class="Retrieve-content step-body" id="myStep">
+            <h1 class="title_name">注册</h1>
+            <div class="step-header">
+                <ul>
+                    <li><p>账号注册</p></li>
+                    <li><p>企业联系人信息</p></li>
+                    <li><p>成功</p></li>
+                </ul>
+            </div>
+            <div class="step-content">
+                <div class="step-list">
+                    <form method="post" role="form" id="" class="login_padding">
+                        <div class="form-group clearfix">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="邮箱"
+                                   autocomplete="off">
+                        </div>
+                        <div class="form-group clearfix">
+                            <input type="password" class="form-control" name="password" id="password"
+                                   placeholder="密码" autocomplete="off">
+                        </div>
+                        <div class="form-group clearfix">
+
+
+                            <input type="password" class="form-control" name="confirmpwd" id="confirmpwd"
+                                   placeholder="再次输入密码" autocomplete="off">
+                        </div>
+
+                        <div class="form-group dropdown btn-block clearfix">
+                            <div class="form-control btn-block " id="choose">身份选择</div>
+                            <div class="dropdown-content" id="choose-contents">
+                                <a href="javascript:chooseIdentity('核心企业')" class="btn-block">核心企业</a>
+                                <a href="javascript:chooseIdentity('供应商')" class="btn-block">供应商</a>
+                                <a href="javascript:chooseIdentity('金融机构')" class="btn-block">金融机构</a>
+                            </div>
+                        </div>
+
+                        <div class="tishis"></div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-danger btn-block"
+                                    id="submitBtn">下一步
+                            </button>
+                        </div>
+                        <div class="tishis"></div>
+                    </form>
+                </div>
+                <div class="step-list">
+                    <form role="form" id="form_login" class="login_padding">
+                        <div class="form-group clearfix">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    1
+                                </div>
+                                <input type="text" class="form-control" name="cname" id="cname" placeholder="企业名称"
+                                       autocomplete="off">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group clearfix">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    2
+                                </div>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="联系人姓名"
+                                       autocomplete="off">
+                            </div>
+
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    3
+                                </div>
+                                <input type="text" class="form-control" name="mail" id="mail" placeholder="联系人证件类型"
+                                       autocomplete="off">
+                            </div>
+
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    4
+                                </div>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="联系人证件号"
+                                       autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-danger btn-block btn-login" id="submitBtn2">提交
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tishi"></div>
+                    </form>
+                </div>
+                <div class="step-list">
+                    <div class="ok_style center">
+                        <h2><img src="images/ok.png"></h2>
+                        <h5 class="color2 mtb20">你已成功注册!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/TweenLite/TweenLite.min.js"></script>
+<script src="js/TweenLite/EasePack.min.js"></script>
+<script src="js/TweenLite/rAF.js"></script>
+<script src="js/TweenLite/demo-1.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

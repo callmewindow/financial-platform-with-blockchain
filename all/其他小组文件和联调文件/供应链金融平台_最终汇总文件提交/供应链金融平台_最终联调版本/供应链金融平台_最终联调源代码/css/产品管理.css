@@ -1,0 +1,11 @@
+.bcfield{
+    width: 1100px;
+}
+.bcOneRecord{
+    width: 1250px;
+}
+.bcFilllInfo span{
+    width: 70px;
+    display: inline-block;
+    font-weight: bolder;
+}

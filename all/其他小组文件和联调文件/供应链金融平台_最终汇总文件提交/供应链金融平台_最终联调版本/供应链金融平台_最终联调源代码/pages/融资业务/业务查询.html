@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>供应商-融资业务</title>
+  <link rel="icon" href="../../images/buaa.png" >
+  <script src="../../js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="../../js/pages.js"></script>
+  <script src="../../js/loader.js"></script>
+  <script src="../../js/FinancialManagement.js"></script>
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../css/loader.css">
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper" id='bodys'>
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../../index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>BU</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>北航高利贷</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="hidden-xs" id="userTag">jkh</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">主菜单</li>
+      
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-pie-chart" style="font-size:14px"></i>
+              <span style="font-size:14px">企业信息</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-left"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../企业信息/实名认证.html" id="verify-tag"><i class="fa fa-circle-o"></i> 实名认证</a></li>
+              <li><a href="../企业信息/查看信息.html"><i class="fa fa-circle-o"></i> 查看信息</a></li>
+              <li><a href="../企业信息/修改信息.html"><i class="fa fa-circle-o"></i> 修改信息</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-laptop" style="font-size:14px"></i>
+              <span style="font-size:14px">授信业务</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-left"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../授信业务/业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+            </ul>
+        </li>
+        <li class="treeview active">
+            <a href="#">
+              <i class="fa fa-edit" style="font-size:14px"></i> <span style="font-size:14px"> 融资业务</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-left"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="融资申请.html"><i class="fa fa-circle-o"></i> 融资申请</a></li>
+              <li class="active"><a href="业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-table" style="font-size:14px"></i> <span style="font-size:14px">资金管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-left"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../资金管理/资金管理.html"><i class="fa fa-angle-right pull-left"></i> 资金管理</a></li>
+            </ul>
+          </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" id="main-contents">
+    <!-- Main content -->
+
+    <!-- /.row -->
+    <section class="content">
+      <h1>
+        融资业务明细
+      </h1>
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="box box-solid box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">待还款总融资额</h3>
+            </div>
+            <div class="box-body">
+              <span class="h1" id ="value"></span><span class="h3 ">元</span>
+            </div><!-- /.box-body -->
+          </div>
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">资金变动记录</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="finance-data" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                  <th class="th-sm">ID
+                  </th>
+                  <th class="th-sm">交易时间
+                  </th>
+                  <th class="th-sm">融资公司名称
+                  </th>
+                  <th class="th-sm">核心企业名称
+                  </th>
+                  <th class="th-sm">账单额度
+                  </th>
+                  <th class="th-sm">利率
+                  </th>
+                  <th class="th-sm">时长
+                  </th>
+                  <th class="th-sm">状态
+                  </th>
+                  <th class="th-sm">还款
+                  </th>
+                </tr>
+                </thead>
+                <tbody/>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- date-range-picker -->
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+<script src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- bootstrap color picker -->
+<script src="../../bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>

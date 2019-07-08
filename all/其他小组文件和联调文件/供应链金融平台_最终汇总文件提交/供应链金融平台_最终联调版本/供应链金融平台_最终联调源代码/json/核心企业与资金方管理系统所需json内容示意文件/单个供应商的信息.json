@@ -1,0 +1,17 @@
+{
+  "msg": "Success",
+  "status": 1,
+  "user":
+  {
+    "email": "test@163.com",
+    "person": "某知名供应商",
+    "profile":{
+      "type": "普通营业执照",
+      "num": "110101199003078777",
+      "person": "某知名法人",
+      "trust": "中国人民银行",
+      "trust_money": 200
+    },
+    "role": "Supplier"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+            var settings = {
+                "url": "http://114.115.240.16/api/order/createOrder",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+                },
+                "data": "{\n\t\"Supplier_email\":\"A@A.com\",\n\t\"money\":\"234\",\n\t\"number\":\"3583743\",\n\t\"days\":\"30\"\n}",
+            };
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

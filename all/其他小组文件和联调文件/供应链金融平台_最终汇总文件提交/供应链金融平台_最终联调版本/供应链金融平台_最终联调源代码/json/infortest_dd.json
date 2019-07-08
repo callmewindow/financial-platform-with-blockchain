@@ -1,0 +1,38 @@
+{
+  "msg": "Success",
+  "status": 0,
+  "order_begintime": "2019-05-18",
+  "order_endtime": "2019-06-30",
+  "order_num": 3259017412873619,
+  "order_money": 30,
+  "Supplier":
+  {
+    "user":
+    {
+      "email": "test@163.com",
+      "name": "某知名供应商",
+      "profile":{
+        "type": "普通营业执照",
+        "num": "110101199003078777",
+        "person": "某知名法人",
+        "trust": "中国人民银行"
+      },
+      "role": "Supplier"
+    }
+  },
+  "CoreBusiness":
+  {
+    "user":
+    {
+      "email": "test@163.com",
+      "name": "某知名核心企业",
+      "profile":{
+	    "money": 50,
+        "order": 2,
+        "not_adopt": 3,
+        "already_adopt": 4
+      },
+      "role": "CoreBusiness"
+    }
+  }
+}

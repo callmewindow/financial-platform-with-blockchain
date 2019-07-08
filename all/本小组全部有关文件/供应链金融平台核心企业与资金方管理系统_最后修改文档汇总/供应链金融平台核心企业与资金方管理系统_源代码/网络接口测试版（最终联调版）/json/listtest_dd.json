@@ -1,0 +1,85 @@
+{
+  "msg": "Success",
+  "order":[
+    {
+      "status": 0,
+      "order_begintime": "2019-05-18",
+      "order_endtime": "2019-06-30",
+      "order_num": 3259017412873619,
+      "order_money": 30,
+      "Supplier":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某不知名供应商",
+          "profile":{
+            "type": "普通营业执照",
+            "num": "12387231027912749",
+            "person": "某不知名法人",
+            "trust": "中国人民银行",
+            "trust_money": 100
+          },
+          "role": "Supplier"
+        }
+      },
+      "CoreBusiness":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某不知名核心企业",
+          "profile":{
+		    "money": 50,
+		    "order": 2,
+            "not_adopt": 3,
+            "already_adopt": 4
+          },
+          "role": "CoreBusiness"
+        }
+      }
+    },
+    {
+      "status": 0,
+      "order_begintime": "2019-05-10",
+      "order_endtime": "2019-07-20",
+      "order_num": 7983279474243,
+      "order_money": 30,
+      "Supplier":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某知名供应商",
+          "profile":{
+            "type": "普通营业执照",
+            "num": "110101199003078777",
+            "person": "某知名法人",
+            "trust": "中国人民银行",
+            "trust_money": 200
+          },
+          "role": "Supplier"
+        }
+      },
+      "CoreBusiness":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某知名核心企业",
+          "profile":{
+		    "money": 50,
+		    "order": 2,
+            "not_adopt": 3,
+            "already_adopt": 4
+          },
+          "role": "CoreBusiness"
+        }
+      }
+    }
+  ]
+}

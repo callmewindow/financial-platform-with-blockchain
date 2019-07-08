@@ -1,0 +1,209 @@
+.treeview a{
+    cursor: pointer;
+}
+
+/*!*功能模块标题*!*/
+.bcTitle{
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+/*表格容器*/
+#bcContainer{
+    background-color: white;
+    margin:10px;
+    padding: 10px;
+    height: auto;
+    border-radius: 5px;
+    overflow-x: scroll;
+    position: relative;
+}
+/*滚动条样式*/
+#bcContainer::-webkit-scrollbar{
+    height:4px;
+}
+#bcContainer::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #398db3;
+}
+.bcRecordList{
+    margin-top:100px;
+    width: 1000px;
+    clear: both;
+}
+/*操作表格按钮*/
+.bcOperation{
+    position: absolute;
+    top: 0px;
+}
+.bcOperation ul li{
+    float: left;
+    list-style: none;
+    width: 100px;
+}
+.bcOperation ul li button{
+    height: 40px;
+    margin-top:5px;
+    margin-left:-20px;
+    line-height: 30px;
+    background-color: white;
+    color: #0b93d5;
+    border: none;
+    outline:none;
+    font-size: 20px;
+    font-weight: 600;
+}
+.bcOperation ul li button:active{
+    color: #0bb4fa;
+}
+/*表格字段样式*/
+.bcfield{
+    width: 1000px;
+    position: absolute;
+    top:50px;
+}
+.bcfield ul li{
+    /*display: inline-block;*/
+    float: left;
+    width: 150px;
+    font-size: larger;
+    font-weight: 600;
+    list-style: none;
+}
+.bcOneRecord{
+    /*height: 80px;*/
+    line-height: 40px;
+}
+.bcOneRecord ul{
+    height: 50px;
+    border-top: #ecf0f5 solid 1px;
+    clear: left;
+}
+.bcOneRecord ul li{
+    /*display: inline-block;*/
+    float: left;
+    width: 140px;
+    margin-right:10px;
+    font-size:18px ;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    margin-top: 10px;
+}
+.bcOneRecord ul li:nth-last-child(1){
+    width: 60px;
+    border-top: none;
+}
+.bcOneRecord ul li:nth-last-child(2){
+    width: 60px;
+    border-top: none;
+}
+.bcOneRecord ul li button{
+    height: 40px;
+    /*margin-top:0px;*/
+    margin-right:10px;
+    line-height: 30px;
+    background-color: white;
+    color: #0b93d5;
+    border: none;
+    outline:none;
+}
+.bcOneRecord ul li button:active{
+    color: #0bb4fa;
+}
+[v-cloak] {
+    display: none;
+}
+/*填写数据信息的弹窗*/
+#bcFillInfoMask{
+    visibility:  hidden ;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(44, 64, 90, 0.3);
+    height: 100%;
+    z-index: 1000;
+}
+#bcFillInfoBox{
+    position: relative;
+    width:500px;
+    height: auto;
+    background-color: white;
+    margin:150px auto;
+    /*margin-top:100px;*/
+    border-radius: 5px;
+    padding: 20px;
+}
+#bcFillInfoMask_add{
+    visibility: hidden ;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(44, 64, 90, 0.3);
+    height: 100%;
+    z-index: 1000;
+}
+#bcFillInfoBox_add  {
+    position: relative;
+    width:500px;
+    height: auto;
+    background-color: white;
+    margin:150px auto;
+    /*margin-top:100px;*/
+    border-radius: 5px;
+    padding: 20px;
+}
+.bcFilllInfo{
+    margin-top:20px;
+}
+.bcFilllInfo text{
+    font-weight: bolder;
+}
+.bcFilllInfo input{
+    width: 70%;
+    margin-left:40px;
+    height:30px;
+    padding-left: 10px;
+}
+.bcFilllInfoBtn{
+    height: 40px;
+    margin-top:20px;
+    margin-right:10px;
+    line-height: 30px;
+    background-color: white;
+    color: #0b93d5;
+    border: none;
+    outline:none;
+}
+.bcFilllInfoBtn:active{
+    color: #0bb4fa;
+}
+/*删除弹窗*/
+.bcdelInfoMask{
+    /*visibility:  hidden ;*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(44, 64, 90, 0.3);
+    height: 100%;
+    z-index: 1000;
+}
+.bcdelInfoBox{
+    position: relative;
+    width:300px;
+    height: auto;
+    background-color: white;
+    margin:150px auto;
+    /*margin-top:100px;*/
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+/*.bcFillInfoHeader{*/
+/**/
+/*}*/

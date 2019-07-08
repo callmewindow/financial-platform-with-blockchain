@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>供应商-融资业务</title>
+    <link rel="icon" href="../../images/buaa.png" >
+    <script src="../../js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../../js/pages.js"></script>
+    <script src="../../js/loader.js"></script>
+    <script src="../../js/FinancingApply.js"></script>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper" id="bodys">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="../../index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>BU</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>北航高利贷</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs" id="userTag">jkh</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">主菜单</li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-pie-chart" style="font-size:14px"></i>
+                    <span style="font-size:14px">企业信息</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../企业信息/实名认证.html" id="verify-tag"><i class="fa fa-circle-o"></i> 实名认证</a></li>
+                    <li><a href="../企业信息/查看信息.html"><i class="fa fa-circle-o"></i> 查看信息</a></li>
+                    <li><a href="../企业信息/修改信息.html"><i class="fa fa-circle-o"></i> 修改信息</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop" style="font-size:14px"></i>
+                    <span style="font-size:14px">授信业务</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../授信业务/业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+                </ul>
+            </li>
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-edit" style="font-size:14px"></i> <span style="font-size:14px"> 融资业务</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="融资申请.html"><i class="fa fa-circle-o"></i> 融资申请</a></li>
+                    <li><a href="业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-table" style="font-size:14px"></i> <span style="font-size:14px">资金管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../资金管理/资金管理.html"><i class="fa fa-circle-o"></i> 资金管理</a></li>
+                </ul>
+            </li>
+            </section>
+            <!-- /.sidebar -->
+        </ul>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                融资申请
+            </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="col-xs-10">
+                <!-- Default box -->
+                <div class="box" id="box-stage-1">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">推荐业务</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="col-lg-3 col-xs-6">
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <p>应收账款业务</p>
+                                </div>
+                                <div class="small-box-footer" id="accounts-receivable">选择
+                                    <i class="fa fa-arrow-circle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box" id="box-stage-2">
+                    <div class="box-header">
+                        <h3 class="box-title">企业列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-hover" id="corporation-table">
+                            <thead>
+                            <tr>
+                                <th>金融机构ID</th>
+                                <th>金融机构名称</th>
+                                <th>申请</th>
+                                <th>dsf</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box" id="box-stage-3">
+                    <div class="box-header">
+                        <h3 class="box-title">企业列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-hover" id="business-table">
+                            <thead>
+                            <tr>
+                                <th>核心企业机构ID</th>
+                                <th>核心企业机构名称</th>
+                                <th>申请</th>
+                                <th>df</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box" id="box-stage-4">
+                    <div class="box-header">
+                        <h3 class="box-title">产品列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-hover" id="product-table">
+                            <thead>
+                            <tr>
+                                <th>产品id</th>
+                                <th>产品名称</th>
+                                <th>日利率</th>
+                                <th>融资时间</th>
+                                <th>还款方式</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>内部测试产品1</td>
+                                <td>0%</td>
+                                <td>1天</td>
+                                <td>先息后本</td>
+                                <td>
+                                    <button type="submit" class="btn btn-info pull-left">立即申请</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box" id="box-stage-5">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">申请融资</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"
+                                       style="font-size:14px"><a>应收账款融资额度</a></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="adopt_money" placeholder="请输入数字">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-default">取消</button>
+                            <button type="button" id="final-submit" class="btn btn-info pull-right">提交
+                            </button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+</div>
+<!-- ./wrapper -->
+
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "data":[
+    {
+      "id": 1,
+      "name": "内部测试产品77",
+      "interest": 0.02,
+      "time_length": 1,
+      "method": "先息后本"
+    }
+
+
+  ]
+}

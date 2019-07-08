@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/detail_ddzz.js"></script>
+    <link rel="stylesheet" href="../../css/detail_ddzz.css">
+</head>
+<body>
+<div onclick="showDetail()">
+    订单信息展示
+</div>
+<div id="bg">
+    <div id="detail">
+        <div id="close" onclick="hideDetail()">
+            ×
+        </div>
+        <div id="title">
+            订单详细信息
+        </div>
+        <div id="gys">
+            <div class="gys_info" id="gys_name">
+                <span class="what">供应商名称：</span>
+                <span id="gys_name_content">北京Jean授信企业</span>
+            </div>
+            <div class="gys_info" id="gys_type">
+                <span class="what">供应商类型：</span>
+                <span id="gys_type_content">普通营业执照</span>
+            </div>
+            <div class="gys_info" id="gys_num">
+                <span class="what">供应商证件号码：</span>
+                <span id="gys_num_content">110101199003078777</span>
+            </div>
+            <div class="gys_info" id="gys_person">
+                <span class="what">供应商法人名称：</span>
+                <span id="gys_person_content">张宇晋</span>
+            </div>
+            <div class="gys_info" id="dd_num">
+                <span class="what">订单合同单号：</span>
+                <span id="dd_num_content">1234567890</span>
+            </div>
+            <div class="gys_info" id="dd_money">
+                <span class="what">订单金额：</span>
+                <span id="dd_money_content">200</span>万元
+            </div>
+            <div class="gys_info" id="gys_apply_begintime">
+                <span class="what">订单形成时间：</span>
+                <span id="begintime">XXXX-XX-XX</span>
+            </div>
+            <div class="gys_info" id="gys_apply_endtime">
+                <span class="what">交付截止时间：</span>
+                <span id="endtime">XXXX-XX-XX</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

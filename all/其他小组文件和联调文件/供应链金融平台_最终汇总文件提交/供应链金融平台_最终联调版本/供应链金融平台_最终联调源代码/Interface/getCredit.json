@@ -1,0 +1,21 @@
+{
+  "msg": "Success",
+  "data": [
+    {
+      "createTime": "2019-06-04 14:15:26",
+      "value": 114514,
+      "status": 0
+    },
+    {
+      "createTime": "2019-06-04 14:25:36",
+      "value": 1919,
+      "status": 1
+    },
+    {
+      "createTime": "2019-06-04 14:25:36",
+      "value": 12450,
+      "status": 2
+    }
+  ],
+  "status": 1
+}

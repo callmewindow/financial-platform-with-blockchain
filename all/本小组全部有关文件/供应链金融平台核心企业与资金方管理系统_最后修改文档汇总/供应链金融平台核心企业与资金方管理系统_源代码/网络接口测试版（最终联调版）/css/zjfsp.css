@@ -1,0 +1,33 @@
+.C_Table{
+    width:100%;
+    text-align:center;
+    border-collapse: collapse;
+}
+
+#C_Table th {
+    margin: 0;
+    padding: 0 25px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    background: #f1f1f1;
+    color: #A0A0A0;
+}
+
+#C_Table tr {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.Detail_Info{
+    position: absolute;
+    display:none;
+    width:200px;
+    height:200px;
+    top:50%;
+    left:50%;
+    background-color:#FFCC80;
+    z-index: 999;
+}

@@ -1,0 +1,62 @@
+
+.portrait {
+    width: 80px;
+    margin: 0 60px 25px;
+}
+.portrait img{
+    width: 80px;
+    height: 80px;
+    border-radius:50%;
+    border: white solid 5px ;
+    margin: 0;
+}
+.portrait p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#order {
+    clear: both;
+    border-spacing: 0;
+}
+
+#order th {
+    margin: 0;
+    padding: 0 25px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    background: #ecf0f5;
+    color: #222d32;
+}
+
+#order tr {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#order tr:hover {
+    background: #e7ebf0;
+}
+
+#order .interline {
+    background: #ecf0f5;
+}
+
+#order_table {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.tbutton {
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+}

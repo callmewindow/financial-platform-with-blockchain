@@ -1,0 +1,19 @@
+.bcfield{
+    width: 1150px;
+}
+.bcfield ul li{
+    width: 160px;
+}
+.bcOneRecord{
+    width: 1370px;
+}
+.bcOneRecord ul li{
+    width: 150px;
+}
+.bcFilllInfo text{
+    width: 100px;
+    display: inline-block;
+}
+.bcFilllInfo input{
+    width: 60%;
+}

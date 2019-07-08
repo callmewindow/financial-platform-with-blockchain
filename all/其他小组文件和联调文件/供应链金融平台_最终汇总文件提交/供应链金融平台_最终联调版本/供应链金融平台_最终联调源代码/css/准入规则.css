@@ -1,0 +1,27 @@
+.bcfield{
+    width: 1100px;
+}
+.bcfield .id{
+    width: 150px;
+}
+.bcfield .value{
+    width: 200px;
+}
+.bcOneRecord{
+    width: 1250px;
+}
+.bcOneRecord .id{
+    width: 150px;
+}
+.bcOneRecord .value{
+    width: 900px;
+}
+.bcFilllInfo text{
+    width: 70px;
+    display: inline-block;
+}
+.bcFilllInfo span{
+    width: 70px;
+    display: inline-block;
+    font-weight: bolder;
+}

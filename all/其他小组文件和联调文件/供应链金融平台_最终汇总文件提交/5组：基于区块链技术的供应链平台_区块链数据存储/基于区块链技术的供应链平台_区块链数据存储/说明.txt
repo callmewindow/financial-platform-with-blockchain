@@ -1,0 +1,4 @@
+﻿代码文件夹内的服务器地址是项目使用的华为云地址，如果需要运行请直接用IDEA打开BlockChainService运行Main.java即可
+测试代码内的Jar是代码打包的结果，使用的地址为本机IP，可用于部署后测试本机连接性，用IDEA打开testBlockChainJar文件夹，运行Test.java即可
+文档内的"项目展示.pptx"是为了最终检查制作
+最终部署到后端的Jar为BlockChainService打包的结果

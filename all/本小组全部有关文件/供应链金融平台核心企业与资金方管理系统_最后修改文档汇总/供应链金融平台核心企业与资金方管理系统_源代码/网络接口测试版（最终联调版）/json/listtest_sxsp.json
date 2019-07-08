@@ -1,0 +1,119 @@
+{
+  "msg": "Success",
+  "adopt":[
+    {
+      "status": 0,
+      "adopt_time": "2019-05-18",
+      "adopt_money": 100,
+      "Supplier":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某不知名供应商",
+          "profile":{
+            "type": "普通营业执照",
+            "num": "91387231027912749",
+            "person": "某不知名法人",
+            "trust": "中圆人民银行",
+            "trust_money": 100
+          },
+          "role": "Supplier"
+        }
+      },
+      "CoreBusiness":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": null,
+          "name": null,
+          "profile":{
+		    "money": null,
+		    "order": null,
+            "not_adopt": null,
+            "already_adopt": null
+          },
+          "role": "CoreBusiness"
+        }
+      }
+    },
+    {
+      "status": 0,
+      "adopt_time": "2019-05-18",
+      "adopt_money": 100,
+      "Supplier":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某无名供应商",
+          "profile":{
+            "type": "普通营业执照",
+            "num": "123121342444552344",
+            "person": "某无名法人",
+            "trust": "中回人民银行",
+            "trust_money": 50
+          },
+          "role": "Supplier"
+        }
+      },
+      "CoreBusiness":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": null,
+          "name": null,
+          "profile":{
+		    "money": null,
+		    "order": null,
+            "not_adopt": null,
+            "already_adopt": null
+          },
+          "role": "CoreBusiness"
+        }
+      }
+    },
+    {
+      "status": 0,
+      "adopt_time": "2019-05-18",
+      "adopt_money": 100,
+      "Supplier":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": "test@163.com",
+          "name": "某知名供应商",
+          "profile":{
+            "type": "普通营业执照",
+            "num": "110101199003078777",
+            "person": "某知名法人",
+            "trust": "中国人民银行",
+            "trust_money": 200
+          },
+          "role": "Supplier"
+        }
+      },
+      "CoreBusiness":
+      {
+        "status": 1,
+        "user":
+        {
+          "email": null,
+          "name": null,
+          "profile":{
+		    "money": null,
+		    "order": null,
+            "not_adopt": null,
+            "already_adopt": null
+          },
+          "role": "CoreBusiness"
+        }
+      }
+    }
+  ]
+}

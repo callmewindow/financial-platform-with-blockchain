@@ -1,0 +1,16 @@
+{
+  "msg": "Success",
+  "status": 1,
+  "user":
+  {
+    "email": "test@163.com",
+    "name": "某知名核心企业",
+    "profile":{
+	  "money": 50,
+      "order": 2,
+      "not_adopt": 3,
+      "already_adopt": 4
+    },
+    "role": "CoreBusiness"
+  }
+}

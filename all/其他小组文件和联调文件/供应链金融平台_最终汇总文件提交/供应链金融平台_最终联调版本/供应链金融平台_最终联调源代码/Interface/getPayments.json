@@ -1,0 +1,22 @@
+{
+  "msg": "Success",
+  "data": [
+    {
+      "income": 1,
+      "partyA": "aa Inc.",
+      "money": 123456.11,
+      "createTime": "2019-06-04 14:15:26",
+      "partyB": "ff Inc.",
+      "id": 1
+    },
+    {
+      "income": 0,
+      "partyA": "Apple Inc.",
+      "money": 123456.11,
+      "createTime": "2019-06-04 14:15:36",
+      "partyB": "aa Inc.",
+      "id": 2
+    }
+  ],
+  "status": 1
+}

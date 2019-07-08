@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //登录
+        var settings = {
+            "url": "http://114.115.240.16/api/user/login",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": "{\n\t\"email\":\"c@c.com\",\n\t\"password\":\"ccccccc\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //根据邮箱获得信息
+        var settings = {
+            "url": "http://114.115.240.16/api/user/getUserByEmail",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": "{\n\t\"email\":\"C@C.com\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //获取核心企业信息
+        var settings = {
+            "url": "http://114.115.240.16/api/user/getAllCoreBusinesses",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+            },
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //获取资金方信息
+        var settings = {
+            "url": "http://114.115.240.16/api/user/getAllMoneyGivers",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1I0RHp4XjGIAxrboVg5Ik45LJfcKagOAVkjOyLEOg57G55EbYNaadCCddUj4wpYi9CAiYDcEvgP8T1yVbYRdgYqLzLJVvbxl4MoLnBs+/6dcqnpim9XCjKepqVt/EYi7bzVUyyBLWsEmGhfgGn3mxToHm2IZK4N20eafCNa4CfRyxLUoSj4vzbFPKCsr8PcrA=="
+            },
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //获取所有的融资申请 核心企业
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/getFinancingByUserAndStatus",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1x2vkRGNnyJiYz6e4yVpZAn4WX4r8TpjOVAOkwC7Q5EBPJHumoF5S9gDvVkVAZ3Qz8WWdJmuWQQznCHxxzIIQKi7tA7ZYXgrt04FAFGqqYuGr4s+bBtDrQice8E8fKQxbRt0+lA/TlR1oYB/GORwz5FHj5j5Mxv3akQz/N+v9WbnPgwRiCgxlR/cySZc8DV4DB0GnIZz26tEJVrakR7n3F0HW3RBLpTraA10wHSoBc8GmMN0JSj9rmk4Z1wB+h+I4OtrZQCPGss/aXUBaESQwmluBCZU17+LkB7GqyfK1AH73yFZWvlId2a6atEVGFDfQ3aETy7zOhhKcPhwRw+XJ9TlBQTaltRMB2QwYyMIXXe"
+            },
+            "data": "{\n\t\"status\":\"0\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //获取所有的融资申请 资金方
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/getFinancingByUserAndStatus",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1I0RHp4XjGIAxrboVg5Ik45LJfcKagOAVkjOyLEOg57G55EbYNaadCCddUj4wpYi9CAiYDcEvgP8T1yVbYRdgYqLzLJVvbxl4MoLnBs+/6dcqnpim9XCjKepqVt/EYi7bzVUyyBLWsEmGhfgGn3mxToHm2IZK4N20eafCNa4CfRyxLUoSj4vzbFPKCsr8PcrA=="
+            },
+            "data": "{\n\t\"status\":\"1\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+        //获取订单
+        var settings = {
+            "url": "http://114.115.240.16/api/order/getOrderByUserAndStatus",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+            },
+            "data": "{\n\t\"status\":\"0\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+        //驳回融资申请
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/reject",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1I0RHp4XjGIAxrboVg5Ik45LJfcKagOAVkjOyLEOg57G55EbYNaadCCddUj4wpYi9CAiYDcEvgP8T1yVbYRdgYqLzLJVvbxl4MoLnBs+/6dcqnpim9XCjKepqVt/EYi7bzVUyyBLWsEmGhfgGn3mxToHm2IZK4N20eafCNa4CfRyxLUoSj4vzbFPKCsr8PcrA=="
+            },
+            "data": "{\n\t\"id\":\"2\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //资金方授信审批
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/credit",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1I0RHp4XjGIAxrboVg5Ik45LJfcKagOAVkjOyLEOg57G55EbYNaadCCddUj4wpYi9CAiYDcEvgP8T1yVbYRdgYqLzLJVvbxl4MoLnBs+/6dcqnpim9XCjKepqVt/EYi7bzVUyyBLWsEmGhfgGn3mxToHm2IZK4N20eafCNa4CfRyxLUoSj4vzbFPKCsr8PcrA=="
+            },
+            "data": "{\n\t\"id\":\"2\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //核心企业确权
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/confirm",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+            },
+            "data": "{\n\t\"id\":\"1\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //资金方放款
+        var settings = {
+            "url": "http://114.115.240.16/api/financing/pay",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO1I0RHp4XjGIAxrboVg5Ik45LJfcKagOAVkjOyLEOg57G55EbYNaadCCddUj4wpYi9CAiYDcEvgP8T1yVbYRdgYqLzLJVvbxl4MoLnBs+/6dcqnpim9XCjKepqVt/EYi7bzVUyyBLWsEmGhfgGn3mxToHm2IZK4N20eafCNa4CfRyxLUoSj4vzbFPKCsr8PcrA=="
+            },
+            "data": "{\n\t\"id\":\"3\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+        //创建一个订单
+        var settings = {
+            "url": "http://114.115.240.16/api/order/createOrder",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+            },
+            "data": "{\n\t\"Supplier_email\":\"A@A.com\",\n\t\"money\":\"234\",\n\t\"number\":\"3583743\",\n\t\"days\":\"30\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+        //订单付款
+        var settings = {
+            "url": "http://114.115.240.16/api/order/pay",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json",
+                "token": "T4sUc/8aMvbw6PdvcDwxO0QX6E9RZbbXP7Uj5lllDqyuVpCjvIsfZo5/hh7z30Hwr0jT6v54ln2exqGuhcFr0TwezRo/QqzNaHsepcnf3yU0QqVAYc8zeiclK9T5M1sAA0yAl083fQWoYnaBXh6K4cxV7F5RWOSHC4z1JuJS8nfogiZOQs9/+eaLB16E0GEkNDNzpSQGD24qh9asItZz3w=="
+            },
+            "data": "{\n\t\"id\":\"2\"\n}",
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

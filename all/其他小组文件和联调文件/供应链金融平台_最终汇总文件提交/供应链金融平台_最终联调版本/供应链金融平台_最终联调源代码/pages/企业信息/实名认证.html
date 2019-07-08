@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../../images/buaa.png" >
+    <title>供应商-实名认证</title>
+	<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- ChartJS -->
+<script src="../../bower_components/chart.js/Chart.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script src="../../js/pages.js"></script>
+    <script>
+        function submitVerify() {
+
+            var cardID = document.getElementById('cardID').value;
+            var objFile = document.getElementById('uploadFile');
+            var fileString = '';
+
+            if (cardID.length === 0){
+                alert('营业执照号不能为空');
+                return;
+            }
+
+            if (objFile.value === '') {
+                alert('照片不能为空');
+                return;
+            }
+
+            var files = $('#uploadFile').prop('files');
+            var file = objFile.files[0];
+
+            if (files.length === 0) {
+                alert('请选择文件');
+            } else {
+                var reader = new FileReader();
+                reader.onloadstart = function(){
+                    // alert('读取开始');
+                };
+                reader.onload= function (e) {
+                    // alert('读取完成，转为base64');
+                    fileString = e.target.result;
+                    // alert(fileString);
+                    $.ajax({
+                        type: 'POST',
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        url: 'http://114.115.240.16/api/user/setVerification',
+                        headers:{token:window.token},
+                        data: JSON.stringify({
+                            'detail':  JSON.stringify({
+                                cert:cardID,
+                                file:fileString
+                            })
+                        }),
+                        success: function (result) {
+                            if (result['status'] === 1) {
+                                alert('认证发送成功');
+                                window.href = '../index.html'
+                            } else {
+                                alert('认证发送失败，请再次尝试');
+                            }
+                        }
+                    });
+                    // alert('请求完成');
+                };
+                reader.onloadend = function () {
+                    if (reader.error){
+                        alert('读取文件失败');
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+    </script>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<script type="text/javascript">
+
+    function showPreview(source) {
+        var file = source.files[0];
+        if (window.FileReader) {
+            var fr = new FileReader();
+            fr.onloadend = function (e) {
+                document.getElementById("portrait").src = e.target.result;
+            };
+            fr.readAsDataURL(file);
+        }
+    }
+</script>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper" id="bodys">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="../../index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>BU</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>北航高利贷</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs" id="userTag">jkh</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">主菜单</li>
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-pie-chart" style="font-size:14px"></i>
+                    <span style="font-size:14px">企业信息</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="实名认证.html"  id="verify-tag"><i class="fa fa-circle-o"></i> 实名认证</a></li>
+                    <li><a href="查看信息.html"><i class="fa fa-circle-o"></i> 查看信息</a></li>
+                    <li><a href="修改信息.html"><i class="fa fa-circle-o"></i> 修改信息</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop" style="font-size:14px"></i>
+                    <span style="font-size:14px" class="disable-verify">授信业务</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../授信业务/业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit" style="font-size:14px" class="disable-verify"></i> <span style="font-size:14px">融资业务</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../融资业务/融资申请.html"><i class="fa fa-circle-o"></i> 融资申请</a></li>
+                    <li><a href="../融资业务/业务查询.html"><i class="fa fa-circle-o"></i> 业务查询</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-table" style="font-size:14px"class="disable-verify"></i> <span style="font-size:14px">资金管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../资金管理/资金管理.html"><i class="fa fa-circle-o"></i> 资金管理</a></li>
+                </ul>
+            </li>
+        </ul>
+            <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <!-- right column -->
+            <div class="col-md-8">
+                <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">实名认证</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"
+                                       style="font-size:14px"><a>企业营业执照编号</a></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="cardID" placeholder="请输入营业执照号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label"
+                                       style="font-size:14px"><a>企业营业执照照片</a></label>
+                                <div class="col-sm-10">
+                                    <input type="file" accept=".jpeg,.jpg" value="" class='zj-up-btn pa'
+                                           name="uploadFile" id="uploadFile" onchange="showPreview(this)"/>
+                                    <img id="portrait" width="100" height="120">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-default">取消</button>
+                            <button type="button" class="btn btn-info pull-right" onClick="submitVerify()">提交
+                            </button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+            </div>
+                <!-- /.box -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+
+</div>
+<!-- ./wrapper -->
+
+
+<!-- page script -->
+</body>
+</html>
